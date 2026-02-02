@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #0F5B94;
+  --primary-light: #2C7FB8;
+  --primary-dark: #0A406A;
+  --secondary-color: #F4F9FF;
+  --accent-color: #FF6B35;
+  --text-color: #1F2937;
+  --background-color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn {
+    @apply px-5 py-3 rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light hover:shadow-hover transform hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-primary hover:bg-white hover:shadow-hover transform hover:-translate-y-1;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent/90 hover:shadow-hover transform hover:-translate-y-1;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white bg-transparent hover:bg-white/10;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-soft overflow-hidden transition-all duration-300 hover:shadow-hover;
+  }
+
+  .card-hover {
+    @apply transform hover:-translate-y-2 transition-all duration-300;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-primary-dark;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-neutral-500 max-w-3xl mx-auto mb-12;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .input-field {
+    @apply w-full p-3 rounded-md border border-neutral-300 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all duration-200;
+  }
+
+  .reveal {
+    @apply opacity-0 transition-all duration-700 ease-out;
+  }
+  
+  .reveal-visible {
+    @apply opacity-100 transform-none;
+  }
+  
+  .reveal-delay-200 {
+    transition-delay: 200ms;
+  }
+  
+  .reveal-delay-400 {
+    transition-delay: 400ms;
+  }
+}
